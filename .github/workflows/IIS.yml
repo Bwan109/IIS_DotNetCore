@@ -22,7 +22,7 @@ jobs:
     
     # dotnet build and publish
     - name: Build with dotnet
-      run: dotnet build --configuration Release .\dotnet-core-webapp
+      run: dotnet build --configuration Release .\dotnetcore-webapp-main\dotnet-core-webapp
 
     - name: dotnet publish 
       run: |
