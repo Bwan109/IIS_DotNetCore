@@ -29,6 +29,7 @@ jobs:
         dotnet publish -c Release -o dotnetcorewebapp .\dotnetcore-webapp-main\dotnet-core-webapp
     - name: Deploy to IIS
       run: |
+        powershell -Command "Start-Process cmd -Verb RunAs" 
         iisreset /stop
         Copy-Item ./dotnetcorewebapp/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
         iisreset /start
