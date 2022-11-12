@@ -31,7 +31,7 @@ jobs:
       run: |
         powershell -Command "Start-Process cmd -Verb RunAs" 
         iisreset /stop
-        Copy-Item ./dotnetcorewebapp/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
+        Copy-Item .\dotnetcorewebapp\* \inetpub\wwwroot\dotnetcore-webapp -Recurse -Force
         iisreset /start
     
     - name: Curl the website as a smoke test
